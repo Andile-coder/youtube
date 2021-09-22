@@ -13,9 +13,10 @@ const pool = new Pool({
 app.use(express.json());
 
 const video_getAll = (req, res) => {
-  pool.query("SELECT * FROM videos", (error, result) => {
-    res.json(result.rows);
-  });
+  // pool.query("SELECT * FROM videos", (error, result) => {
+  //   res.json(result.rows);
+  // });
+  console.log("heroku");
 };
 
 const video_add = (req, res) => {
