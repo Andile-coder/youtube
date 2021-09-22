@@ -16,7 +16,7 @@ const video_getAll = (req, res) => {
   // pool.query("SELECT * FROM videos", (error, result) => {
   //   res.json(result.rows);
   // });
-  console.log("heroku");
+  res.send({ name: "Andile" });
 };
 
 const video_add = (req, res) => {
