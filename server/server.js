@@ -1,5 +1,5 @@
 const express = require("express");
-const videoRoute = require("./routes/videosRoutes");
+const videoRoute = require("./route/videosRoutes");
 
 const app = express();
 app.use((req, res, next) => {
