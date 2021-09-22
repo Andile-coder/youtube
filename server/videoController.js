@@ -3,20 +3,18 @@ require("dotenv").config();
 const { Pool } = require("pg");
 const app = express();
 const pool = new Pool({
-  user: process.env.PGUSER,
-  host: process.env.PGHOST,
-  database: process.env.PGDATABASE,
-  password: process.env.PGPASSWORD,
-  port: process.env.PGPORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
-
+pool.connect();
 app.use(express.json());
 
 const video_getAll = (req, res) => {
-  // pool.query("SELECT * FROM videos", (error, result) => {
-  //   res.json(result.rows);
-  // });
-  res.send({ name: "Andile" });
+  pool.query("SELECT * FROM videos", (error, result) => {
+    res.json(result.rows);
+  });
 };
 
 const video_add = (req, res) => {
