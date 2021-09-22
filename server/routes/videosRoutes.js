@@ -1,4 +1,4 @@
-const videoController = require("../controller/videoController");
+const videoController = require("../videoController");
 const express = require("express");
 const router = express.Router();
 router.get("/", videoController.video_getAll);
